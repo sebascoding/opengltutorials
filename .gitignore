@@ -1,1 +1,5 @@
 a.out
+external/*
+bin
+**/bin
+*.exe

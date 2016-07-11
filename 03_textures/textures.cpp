@@ -4,8 +4,8 @@
 
 #include <iostream>
 
-#include "shared/shader.hpp"
-#include "shared/SOIL.h"
+#include "../common/shader.hpp"
+#include "../common/SOIL.h"
 
 GLFWwindow* init();
 void key_callback(GLFWwindow* window, int key, int scancode, int action, int mode);
@@ -38,11 +38,11 @@ int main()
     }
 
     // Init shaders
-    Shader shader = Shader("textures/vertex.vs", "textures/fragment.frag");
+    Shader shader = Shader("vertex.vs", "fragment.frag");
 
     // Load image
     int texWidth, texHeight;
-    unsigned char* image = SOIL_load_image("textures/container.jpg", &texWidth, &texHeight, 0, SOIL_LOAD_RGB);
+    unsigned char* image = SOIL_load_image("container.jpg", &texWidth, &texHeight, 0, SOIL_LOAD_RGB);
 
     // Init buffers
     glGenBuffers(1, &VBO);
